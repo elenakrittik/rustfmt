@@ -1,7 +1,6 @@
 use syn::{
-    parenthesized,
+    Ident, Token, parenthesized,
     parse::{Error as ParserError, Parse, ParseStream},
-    Ident, Token,
 };
 
 #[derive(Debug, Default)]

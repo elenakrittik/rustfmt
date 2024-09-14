@@ -1,4 +1,4 @@
-use std::collections::{hash_set, HashSet};
+use std::collections::{HashSet, hash_set};
 use std::convert::TryFrom;
 use std::fmt;
 use std::ops::Deref;
@@ -11,10 +11,10 @@ use serde::de::{SeqAccess, Visitor};
 use serde::ser::SerializeSeq;
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
+use crate::config::Config;
 use crate::config::file_lines::FileLines;
 use crate::config::lists::*;
 use crate::config::macro_names::MacroSelectors;
-use crate::config::Config;
 
 #[config_type]
 pub enum NewlineStyle {
