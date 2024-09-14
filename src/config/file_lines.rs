@@ -6,8 +6,8 @@ use std::path::PathBuf;
 use std::{cmp, fmt, iter, str};
 
 use rustc_data_structures::sync::Lrc;
-use rustc_span::{self, SourceFile};
-use serde::{ser, Deserialize, Deserializer, Serialize, Serializer};
+use rustc_span::SourceFile;
+use serde::{Deserialize, Deserializer, Serialize, Serializer, ser};
 use serde_json as json;
 use thiserror::Error;
 
@@ -201,7 +201,7 @@ impl FileLines {
     }
 
     /// Returns `true` if this `FileLines` contains all lines in all files.
-    pub(crate) fn is_all(&self) -> bool {
+    pub fn is_all(&self) -> bool {
         self.0.is_none()
     }
 
